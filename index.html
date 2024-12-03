@@ -66,10 +66,10 @@
             <div class="col-lg-12 col-md-12">
               <div class="call-to-action text-right">
                 <p>
-                  <i class="fa fa-map-marker"></i> 123 Street, Newyork, 43100,
-                  United States
+                  <i class="fa fa-map-marker"></i> 40, Abudu street, Ogudu.
+                  lagos.
                 </p>
-                <p><i class="fa fa-phone"></i> Phone: +234</p>
+                <p><i class="fa fa-phone"></i> Phone: +2348059522376</p>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@
                   <div class="col-lg-8 col-md-12">
                     <div class="caption text-left" style="padding-top: 20%">
                       <h1>Car Detailing Services</h1>
-                      <h3>We offer best rapair services</h3>
+                      <h3>We offer best repair services</h3>
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-12">
@@ -161,10 +161,10 @@
                       <h3>Book Your Appointment</h3>
                       <form
                         class="booking-form form"
-                        id="ajax-booking"
-                        method="post"
-                        action="assets/phpscripts/booking.php"
+                        action="https://formsubmit.co/your-email@example.com"
+                        method="POST"
                       >
+                        <input type="hidden" name="_captcha" value="false" />
                         <div class="controls">
                           <div class="row">
                             <div class="col-md-12">
@@ -184,13 +184,27 @@
                             <div class="col-md-12">
                               <div class="form-group">
                                 <input
-                                  type="number"
+                                  type="email"
+                                  class="form-control"
+                                  id="email"
+                                  name="email"
+                                  placeholder="Email Address*"
+                                  required="required"
+                                  data-error="A valid email is required."
+                                />
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input
+                                  type="tel"
                                   class="form-control"
                                   id="phone"
                                   name="phone"
-                                  placeholder="Your Phone*"
+                                  placeholder="Phone Number*"
                                   required="required"
-                                  data-error="Your valid phone is required."
+                                  data-error="Your phone number is required."
                                 />
                                 <div class="help-block with-errors"></div>
                               </div>
@@ -199,39 +213,152 @@
                               <div class="form-group">
                                 <textarea
                                   class="form-control"
-                                  id="gmessage"
-                                  name="message"
+                                  id="address"
+                                  name="address"
                                   rows="2"
-                                  placeholder="Write Your Message*"
+                                  placeholder="No. Street, Apt/Floor No., City, State.*"
                                   required="required"
-                                  data-error="Please leave us a message."
+                                  data-error="Your address is required."
                                 ></textarea>
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
+                            <div class="col-12">
+                              <label>Can we have access to water?</label>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="waterAccess"
+                                  value="Yes"
+                                  required
+                                />
+                                <label class="form-check-label">Yes</label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="waterAccess"
+                                  value="No"
+                                />
+                                <label class="form-check-label">No</label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <label>Can we have access to electricity?</label>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="electricityAccess"
+                                  value="Yes"
+                                  required
+                                />
+                                <label class="form-check-label">Yes</label>
+                              </div>
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="electricityAccess"
+                                  value="No"
+                                />
+                                <label class="form-check-label">No</label>
+                              </div>
+                            </div>
                             <div class="col-md-12">
-                              <button
-                                type="submit"
-                                class="button"
-                                data-text="Send Message"
-                              >
+                              <div class="form-group">
+                                <select
+                                  class="form-control"
+                                  id="machineType"
+                                  name="machineType"
+                                  required
+                                >
+                                  <option value="">Select Machine Type*</option>
+                                  <option value="COUPE/SINGLE CAB">
+                                    COUPE/ SINGLE CAB
+                                  </option>
+                                  <option value="SEDANS">SEDANS</option>
+                                  <option value="TRUCKS">
+                                    TRUCKS (Pick Up)
+                                  </option>
+                                  <option value="2 ROW SUV">2 ROW SUV</option>
+                                  <option value="3 ROW SUV">3 ROW SUV</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <input
+                                  type="datetime-local"
+                                  class="form-control"
+                                  id="appointmentDateTime"
+                                  name="appointmentDateTime"
+                                  required="required"
+                                />
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <select
+                                  class="form-control"
+                                  id="services"
+                                  name="services"
+                                  required
+                                >
+                                  <option value="">Select a Service*</option>
+                                  <option
+                                    value="ESSENTIAL INTERIOR AND EXTERIOR"
+                                  >
+                                    ESSENTIAL INTERIOR AND EXTERIOR
+                                  </option>
+                                  <option
+                                    value="PREMIUM INTERIOR AND EXTERIOR PACKAGE"
+                                  >
+                                    PREMIUM INTERIOR AND EXTERIOR PACKAGE
+                                  </option>
+                                  <option
+                                    value="ROYAL INTERIOR AND EXTERIOR PACKAGE"
+                                  >
+                                    ROYAL INTERIOR AND EXTERIOR PACKAGE
+                                  </option>
+                                  <option value="ESSENTIAL INTERIOR PACKAGE">
+                                    ESSENTIAL INTERIOR PACKAGE
+                                  </option>
+                                  <option value="PREMIUM INTERIOR DETAIL">
+                                    PREMIUM INTERIOR DETAIL
+                                  </option>
+                                  <option value="ROYAL INTERIOR DETAIL">
+                                    ROYAL INTERIOR DETAIL
+                                  </option>
+                                  <option value="ESSENTIAL EXTERIOR DETAIL">
+                                    ESSENTIAL EXTERIOR DETAIL
+                                  </option>
+                                  <option value="PREMIUM EXTERIOR DETAIL">
+                                    PREMIUM EXTERIOR DETAIL
+                                  </option>
+                                  <option value="ROYAL EXTERIOR DETAIL">
+                                    ROYAL EXTERIOR DETAIL
+                                  </option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <button type="submit" class="button">
                                 Book Now
                               </button>
                             </div>
                             <div class="messages">
                               <div
-                                class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                                class="alert alert-success alert-dismissable hidden"
                                 id="msgbookingSubmit"
                               >
-                                <button
-                                  type="button"
-                                  class="close"
-                                  data-dismiss="alert"
-                                  aria-hidden="true"
-                                >
-                                  &times;
-                                </button>
-                                Thank You! your message has been sent.
+                                Thank You! Your booking request has been
+                                submitted.
                               </div>
                             </div>
                           </div>
